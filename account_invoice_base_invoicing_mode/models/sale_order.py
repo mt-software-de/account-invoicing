@@ -51,7 +51,7 @@ class SaleOrder(models.Model):
         )
         for invoice in invoices:
             invoice.with_delay()._validate_invoice()
-        return invoice
+        return invoices
 
     @api.model
     def _get_groupby_fields_for_invoicing(self, mode=False):
